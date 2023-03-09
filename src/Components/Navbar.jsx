@@ -4,15 +4,14 @@ import { userContext } from "../Context/UserProvider";
 
 const Navbar=({username , avatar ,userEmail})=>{
   const {users} =useContext(userContext)
-// console.log("user" ,users.name);
   const [ open , setOpen]=useState(false)
   const handleOpenNavbar=()=>{
  open?setOpen(false):setOpen(true)
   }
 
   return (
-    <nav className="bg-blue-600 text-white py-4 px-8 flex justify-between items-center">
-      <Link to="/" className="text-xl font-bold">
+    <nav className="bg-white text-gray-600 py-4 flex justify-between items-center">
+      <Link to="/" className="text-xl font-semibold">
         Profile
       </Link>
       <div className="flex items-center">
@@ -61,6 +60,7 @@ const Navbar=({username , avatar ,userEmail})=>{
           </div>
         </div>
       </div>
+    
     </nav>
   );
 }

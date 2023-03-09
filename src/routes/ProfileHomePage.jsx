@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from "../Components/Navbar"
+import SideNavbar from '../Components/SiderNavbar';
 
 const ProfileHomePage = () => {
   const { userId } = useParams();
@@ -16,67 +17,64 @@ const ProfileHomePage = () => {
   }, [userId]);
 
   if (!user) {
-    return <div>Loading...</div>;
+    return <div><img style={{margin:"auto"}} src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/media/221d6bfc1960ab98a7585fcc2a4d0181.gif" alt="loading"/></div>;
   }
 
   return (
     <>
-    <div className="flex flex-col items-center">
-    {user && (
-      <div className="flex flex-col items-center justify-center w-full">
-        <div className='h-[12rem] bg-indigo-600'>
-          <h1>Rajkumar</h1>
-        </div>
-        <Navbar username={user.name} avatar={user.profilepicture} userEmail={user.email}/>
-        <img className="w-32 h-32 rounded-full" src={user.profilepicture} alt="Profile" />
-        <div className="text-xl font-bold my-2">{user.name}</div>
-        <div className="text-gray-500 my-2">@{user.username}</div>
+    <div >
+    <div className=' flex '>
+      <div className=' w-[24%]'>
+      <SideNavbar />
       </div>
-    )}
-    <div className="my-8 w-full flex justify-center">
-      <div className="w-2/3 flex flex-col items-center">
-        <div className="text-xl font-bold mb-4">Profile Details</div>
-        <div className="w-full flex justify-between mb-4">
-          <div className="text-gray-500">Name</div>
-          <div>{user?.name}</div>
+      { user && (<div className='py-12 px-8 w-[76%]'>
+        <Navbar username={user.name} avatar={user.profilepicture} userEmail={user.email} />
+        <hr/>
+      <div className=' flex flex-warp justify-between mt-4 p-8'>
+        <div className='p-4 w-[40%]'>
+          <div>
+            <img className='w-52 h-52 rounded-full m-auto '  src={user.profilepicture} alt={user.username}/>
+            <p className='text-gray-700 text-xl font-medium pt-2' >{user?.name}</p>
+          </div>
+          <div className='leading-8  '>
+            <p className='text-gray-500 font-medium'>Username : <b className='text-gray-700' >{user?.username}</b></p>
+            <p className='text-gray-500 font-medium'>e-mail : <b className='text-gray-700' >{user?.email}</b></p>
+            <p className='text-gray-500 font-medium'>Phone : <b className='text-gray-700' >{user?.phone}</b></p>
+            <p className='text-gray-500 font-medium'>Website : <b className='text-gray-700' >{user?.website}</b></p>
+          </div>
+        <hr/>
+        <div className='leading-10 '>
+          <heading className="text-gray-500 font-medium">Company</heading>
+          <p className='text-gray-500 font-medium'>Name : <b className='text-gray-700' >{user?.company.name}</b></p>
+          <p className='text-gray-500 font-medium flex'>catchphrase : <div className='w-[60%]'><b className='text-gray-700 ' >{user?.company.catchPhrase}</b></div></p>
+          <p className='text-gray-500 font-medium flex justify-center'>bs : <div className='w-[60%]'><b className='text-gray-700 ' >{user?.company.bs}</b></div></p>
         </div>
-        <div className="w-full flex justify-between mb-4">
-          <div className="text-gray-500">Email</div>
-          <div>{user?.email}</div>
         </div>
-        <div className="w-full flex justify-between mb-4">
-          <div className="text-gray-500">Phone</div>
-          <div>{user?.phone}</div>
-        </div>
-        <div className="w-full flex justify-between mb-4">
-          <div className="text-gray-500">Website</div>
-          <div>{user?.website}</div>
+        <hr className='border border-gray-300 h-auto'/>
+        <div className=' w-[50%] p-4 '>
+         <div className='leading-8 '>
+          <heading className="text-gray-500 font-medium">Address</heading>
+          <p className='text-gray-500 font-medium'>Street : <b className='text-gray-700' >{user?.address.street}</b></p>
+          <p className='text-gray-500 font-medium'>Suite : <b className='text-gray-700' >{user?.address.suite}</b></p>
+          <p className='text-gray-500 font-medium'>City : <b className='text-gray-700' >{user?.address.city}</b></p>
+          <p className='text-gray-500 font-medium'>Zipcode : <b className='text-gray-700' >{user?.address.zipcode}</b></p>
+         </div>
+         <hr />
+         <div className='pt-4'>
+          <img className='rounded-2xl' src="https://static.toiimg.com/thumb/msid-79949586,imgsize-128601,width-400,resizemode-4/79949586.jpg" alt="map" />
+          <div className='flex justify-end gap-4'>
+           <p className='text-gray-500 font-medium flex'>Lat: <p className='text-gray-700' >{user?.address.geo.lat}</p></p>
+           <p className='text-gray-500 font-medium flex'>Lng: <p className='text-gray-700' >{user?.address.geo.lng}</p></p>
+          </div>
+         </div>
         </div>
       </div>
+      </div>)
+      }
     </div>
-    <div className="my-8 w-full flex justify-center">
-      <div className="w-2/3 flex flex-col items-center">
-        <div className="text-xl font-bold mb-4">Posts Details</div>
-        <div className="text-gray-500 mb-4">Coming soon</div>
       </div>
-    </div>
-    <div className="my-8 w-full flex justify-center">
-      <div className="w-2/3 flex flex-col items-center">
-        <div className="text-xl font-bold mb-4">Gallery</div>
-        <div className="text-gray-500 mb-4">Coming soon</div>
-      </div>
-    </div>
-    <div className="my-8 w-full flex justify-center">
-      <div className="w-2/3 flex flex-col items-center">
-        <div className="text-xl font-bold mb-4">ToDo</div>
-        <div className="text-gray-500 mb-4">Coming soon</div>
-      </div>
-    </div>
-  </div>
   </>
   );
 };
 
 export default ProfileHomePage;
-
-
