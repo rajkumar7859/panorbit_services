@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from "../Components/Navbar"
 
 const ProfileHomePage = () => {
   const { userId } = useParams();
@@ -8,7 +9,7 @@ const ProfileHomePage = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const response = await axios.get(`https://panorbit.in/api/users/${userId}.json`);
+      const response = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users/${userId}`);
       setUser(response.data);
     };
     fetchUser();
@@ -19,9 +20,14 @@ const ProfileHomePage = () => {
   }
 
   return (
+    <>
     <div className="flex flex-col items-center">
     {user && (
       <div className="flex flex-col items-center justify-center w-full">
+        <div className='h-[12rem] bg-indigo-600'>
+          <h1>Rajkumar</h1>
+        </div>
+        <Navbar username={user.name} avatar={user.profilepicture} userEmail={user.email}/>
         <img className="w-32 h-32 rounded-full" src={user.profilepicture} alt="Profile" />
         <div className="text-xl font-bold my-2">{user.name}</div>
         <div className="text-gray-500 my-2">@{user.username}</div>
@@ -67,6 +73,7 @@ const ProfileHomePage = () => {
       </div>
     </div>
   </div>
+  </>
   );
 };
 
