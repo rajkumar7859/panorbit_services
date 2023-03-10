@@ -1,5 +1,5 @@
-## Important! 
-### Run it on local I have use localStorage in it on deploy it's run some issue
+## Deploy Link 
+### https://panorbit-services-rajkumar7859.vercel.app/
 ## Instructions
 ### This is a web application built with React JS and Tailwind CSS, which implements the following features:
 
