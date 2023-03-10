@@ -1,11 +1,29 @@
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import React from "react";
 import { RiArrowDropRightLine } from "react-icons/ri";
 
 const SideNavbar = () => {
-  const { userId } = useParams();
   const activeLink = useLocation();
- 
+  const dataArr = JSON.parse(localStorage.getItem("userData"));
+
+  const getIndicator = (path, color, marginTop) => {
+    return activeLink.pathname === path && (
+      <div style={{ marginTop }} className="indicator">
+        <style>
+          {`
+            .indicator::before {
+              background-color: ${color};
+            }
+            .indicator::after {
+              background-color: ${color};
+            }
+          `}
+        </style>
+        <RiArrowDropRightLine className="text-[2.1rem] text-gray-400" />
+      </div>
+    );
+  };
+
   return (
     <nav className="p-8">
       <div className=" bg-gradient-to-b from-indigo-500 to-purple-800 p-8 h-[45rem] rounded-3xl">
@@ -13,9 +31,9 @@ const SideNavbar = () => {
           <ul>
             <li>
               <Link
-                to={`/profile/${userId}`}
+                to={`/profile/${dataArr.id}`}
                 className={`${
-                  activeLink.pathname === `/profile/${userId}`
+                  activeLink.pathname === `/profile/${dataArr.id}`
                     ? "text-white"
                     : "text-gray-400"
                 }`}
@@ -55,75 +73,18 @@ const SideNavbar = () => {
                 to="/profile/todo"
                 className={`${
                   activeLink.pathname === "/profile/todo"
-                    ? `text-white`
+                    ? "text-white"
                     : "text-gray-400"
                 }`}
               >
                 ToDo
               </Link>
-            <hr />
+              <hr />
             </li>
-            {activeLink.pathname === "/profile/posts" && (
-              <div style={{ marginTop: "-11rem " }} className="indicator">
-                <style>
-                  {`
-        .indicator::before {
-          background-color: #664bd5;
-        }
-        .indicator::after {
-          background-color: #664bd5;
-        }
-      `}
-                </style>
-                <RiArrowDropRightLine className="text-[2.1rem] text-gray-400" />
-              </div>
-            )}
-            {activeLink.pathname === "/profile/todo" && (
-              <div style={{ marginTop: "-3rem " }} className="indicator">
-                <style>
-                  {`
-        .indicator::before {
-          background-color: #6740c9;
-        }
-        .indicator::after {
-          background-color: #6740c9;
-        }
-      `}
-                </style>
-                <RiArrowDropRightLine className="text-[2.1rem] text-gray-400" />
-              </div>
-            )}
-            {activeLink.pathname === `/profile/${userId}` && (
-              <div style={{ marginTop: "-15rem " }} className="indicator">
-                <style>
-                  {`
-        .indicator::before {
-          background-color: #6652db;
-        }
-        .indicator::after {
-          background-color: #6652db;
-        }
-      `}
-                </style>
-                <RiArrowDropRightLine className="text-[2.1rem] text-gray-400" />
-              </div>
-            )}
-            {activeLink.pathname === "/profile/gallery" && (
-              <div style={{ marginTop: "-7rem " }} className="indicator">
-                <style>
-                  {`
-        .indicator::before {
-          background-color: #6646cf;
-        }
-        .indicator::after {
-          background-color: #6646cf;
-        }
-      `}
-                </style>
-                <RiArrowDropRightLine className="text-[2.1rem] text-gray-400" />
-              </div>
-            )}
-           
+            {getIndicator("/profile/posts", "#664bd5", "-11rem")}
+            {getIndicator("/profile/todo", "#6740c9", "-3rem")}
+            {getIndicator(`/profile/${dataArr.id}`, "#6652db", "-15rem")}
+            {getIndicator("/profile/gallery", "#6646cf", "-7rem")}
           </ul>
         </div>
       </div>
