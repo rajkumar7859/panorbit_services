@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from "../Components/Navbar"
-import SideNavbar from '../Components/SiderNavbar';
+import SideNavbar from '../Components/SideNavbar';
 
 const ProfileHomePage = () => {
   const { userId } = useParams();
@@ -25,7 +25,7 @@ const ProfileHomePage = () => {
     <div >
     <div className=' flex '>
       <div className=' w-[24%]'>
-      <SideNavbar />
+      <SideNavbar  />
       </div>
       { user && (<div className='py-12 px-8 w-[76%]'>
         <Navbar username={user.name} avatar={user.profilepicture} userEmail={user.email} />

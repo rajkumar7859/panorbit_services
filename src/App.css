@@ -2,3 +2,41 @@
 .App {
   text-align: center;
 }
+.activeLinkHover{
+  color: white;
+}
+.activeLinkHover:hover{
+  background-color: red;
+  border-top-left-radius: 1rem;
+}
+.indicator{
+  position: absolute;
+  left: 269px;
+  height: 2rem;
+  width: 2.2rem;
+  background-color: white;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.indicator::before{
+  content: "";
+  position: absolute;
+  left: 23px;
+  top: -21px;
+  width: 1rem;
+  height: 1rem;
+  background-color: white;
+  border-bottom-right-radius: 1rem;
+  /* box-shadow: 0 10px 0 white; */
+}
+.indicator::after{
+  content: "";
+    position: absolute;
+    left: 23px;
+    top: 33px;
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border-bottom-left-radius: 1rem;
+  /* box-shadow: 0 10px 0 white; */
+}

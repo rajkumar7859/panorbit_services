@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Gallery from './Gallery'
 import LandingPage from './LandingPage'
 import Posts from './Posts'
+import Profile from './Profile'
 import ProfileHomePage from './ProfileHomePage'
 import ToDo from './ToDo'
 
@@ -12,6 +13,7 @@ const Allroutes = () => {
       <Routes>
         <Route path='/' element={<LandingPage />}/>
         <Route path='/profile/:userId' element={<ProfileHomePage />} />
+        <Route path='/profile/:id' element={<Profile />} />
         <Route path='/profile/posts' element={<Posts />} />
         <Route path='/profile/gallery' element={<Gallery />} />
         <Route path='/profile/todo' element={<ToDo />} />

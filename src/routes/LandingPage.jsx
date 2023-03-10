@@ -7,7 +7,7 @@ const LandingPage = ()=>{
  const {users } =useContext(userContext)
   function handleUserClick(userId) {
     // Redirect to profile home page for selected user
-    console.log("User selected:", userId);
+    console.log("Landing User selected:", userId);
   }
   return (
     <div
@@ -39,7 +39,7 @@ const LandingPage = ()=>{
                   <Link
                     to={`/profile/${user.id}`}
                     className="block  rounded hover:bg-gray-100 "
-                    onClick={() => handleUserClick(user.id)}
+                    // onClick={() => handleUserClick(user.id)}
                   >
                     <div className="flex items-center pb-4 bg-white">
                       <img
