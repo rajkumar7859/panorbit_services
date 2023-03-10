@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav className="bg-white text-gray-600 py-4 flex justify-between items-center">
       {/* Link to home page */}
-      <Link to="/" className="text-xl font-semibold">
+      <Link to="#" className="text-xl font-semibold">
         {location.pathname===`/profile/${dataArr.id}`?"Profile" :""}
         {location.pathname===`/profile/posts`?"Posts" :""}
         {location.pathname===`/profile/gallery`?"Gallery" :""}
