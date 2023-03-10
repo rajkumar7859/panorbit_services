@@ -36,33 +36,33 @@ const ProfileHomePage = () => {
         <Navbar  />
         <hr/>
       <div className=' flex flex-warp justify-between mt-4 p-8'>
-        <div className='p-4 w-[40%]'>
+        <div className='p-4 w-[35%]'>
           <div>
             <img className='w-52 h-52 rounded-full m-auto '  src={dataArr.profilepicture} alt={dataArr.username}/>
             <p className='text-gray-700 text-xl font-medium pt-2' >{dataArr?.name}</p>
           </div>
           <div className='leading-8  '>
-            <p className='text-gray-500 font-medium'>Username : <b className='text-gray-700' >{dataArr?.username}</b></p>
-            <p className='text-gray-500 font-medium'>e-mail : <b className='text-gray-700' >{dataArr?.email}</b></p>
-            <p className='text-gray-500 font-medium'>Phone : <b className='text-gray-700' >{dataArr?.phone}</b></p>
-            <p className='text-gray-500 font-medium'>Website : <b className='text-gray-700' >{dataArr?.website}</b></p>
+            <p className='text-gray-500 font-medium flex justify-between'>Username : <b className='text-gray-700 text-left' >{dataArr?.username}</b></p>
+            <p className='text-gray-500 font-medium flex justify-between'>e-mail : <b className='text-gray-700 text-left' >{dataArr?.email}</b></p>
+            <p className='text-gray-500 font-medium flex justify-between'>Phone : <b className='text-gray-700 text-left' >{dataArr?.phone}</b></p>
+            <p className='text-gray-500 font-medium flex justify-between'>Website : <b className='text-gray-700 text-left' >{dataArr?.website}</b></p>
           </div>
         <hr/>
         <div className='leading-10 '>
           <heading className="text-gray-500 font-medium">Company</heading>
           <p className='text-gray-500 font-medium'>Name : <b className='text-gray-700' >{dataArr?.company.name}</b></p>
-          <p className='text-gray-500 font-medium flex'>catchphrase : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.catchPhrase}</b></div></p>
-          <p className='text-gray-500 font-medium flex justify-center'>bs : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.bs}</b></div></p>
+          <p className='text-gray-500 font-medium flex justify-between'>catchphrase : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.catchPhrase}</b></div></p>
+          <p className='text-gray-500 font-medium flex justify-between'>bs : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.bs}</b></div></p>
         </div>
         </div>
         <hr className='border border-gray-300 h-auto'/>
         <div className=' w-[50%] p-4 '>
-         <div className='leading-8 '>
-          <heading className="text-gray-500 font-medium">Address</heading>
-          <p className='text-gray-500 font-medium'>Street : <b className='text-gray-700' >{dataArr?.address.street}</b></p>
-          <p className='text-gray-500 font-medium'>Suite : <b className='text-gray-700' >{dataArr?.address.suite}</b></p>
-          <p className='text-gray-500 font-medium'>City : <b className='text-gray-700' >{dataArr?.address.city}</b></p>
-          <p className='text-gray-500 font-medium'>Zipcode : <b className='text-gray-700' >{dataArr?.address.zipcode}</b></p>
+         <div className='leading-8 w-[65%] '>
+          <heading className="text-gray-500 font-medium text-left">Address :</heading>
+          <p className='text-gray-500 font-medium flex justify-between'>Street : <b className='text-gray-700' >{dataArr?.address.street}</b></p>
+          <p className='text-gray-500 font-medium flex justify-between'>Suite : <b className='text-gray-700' >{dataArr?.address.suite}</b></p>
+          <p className='text-gray-500 font-medium flex justify-between'>City : <b className='text-gray-700' >{dataArr?.address.city}</b></p>
+          <p className='text-gray-500 font-medium flex justify-between'>Zipcode : <b className='text-gray-700' >{dataArr?.address.zipcode}</b></p>
          </div>
          <hr />
          <div className='pt-4'>
