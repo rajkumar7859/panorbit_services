@@ -1,5 +1,5 @@
-### Deploy link
-##### https://panorbit-services.vercel.app/
+## Important! 
+### Run it on local I have use localStorage in it on deploy it's run some issue
 ### Instructions
 
 ##### This is a web application built with React JS and Tailwind CSS, which implements the following features:
@@ -27,6 +27,23 @@ c. List of other users' accounts (along with profile picture) and usernames
 d. Clicking SignOut button will redirect the user to the Landing page.
 
 Chat: A chat box, as shown in the design, is included in the application.
+
+## Landing page 
+![Screenshot (81)](https://user-images.githubusercontent.com/103853109/224435705-690fb74b-f48a-474b-a83b-919762ca6b91.png)
+
+## Profile page
+![Screenshot (85)](https://user-images.githubusercontent.com/103853109/224435724-c5282dae-381c-46f5-bee2-0133e0398fc1.png)
+
+![Screenshot (86)](https://user-images.githubusercontent.com/103853109/224435765-72ab5622-0d9c-43a3-a8c6-4c18962d3a1a.png)
+
+## Posts
+![Screenshot (87)](https://user-images.githubusercontent.com/103853109/224435789-b7079aa4-c5db-43ea-baba-7e3e62a3be38.png)
+
+## Chat box
+![Screenshot (88)](https://user-images.githubusercontent.com/103853109/224435959-74271dcb-ff66-42d0-9e23-94858ac67cb8.png)
+
+## User Details
+![Screenshot (87)](https://user-images.githubusercontent.com/103853109/224436008-c471cda6-b6d1-4676-9069-e2e40f8c042b.png)
 
 To run the application:
 
