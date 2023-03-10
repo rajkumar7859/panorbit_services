@@ -9,7 +9,6 @@ const UserProvider = ({children}) => {
   const getData = async () => {
     const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users`);
     const userData = res.data;
-    // console.log("datause " ,userData.id);
     setUsers(userData);
   };
 

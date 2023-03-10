@@ -6,7 +6,7 @@ const Navbar=({username , avatar ,userEmail})=>{
   const {users} =useContext(userContext)
   const [ open , setOpen]=useState(false)
   const handleOpenNavbar=()=>{
- open?setOpen(false):setOpen(true)
+    setOpen(!open)
   }
 
   return (

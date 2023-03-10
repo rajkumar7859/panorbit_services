@@ -73,6 +73,7 @@ const ProfileHomePage = () => {
       </div>)
       }
     </div>
+
     <Chat />
       </div>
   </>

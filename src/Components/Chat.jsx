@@ -6,7 +6,7 @@ const Chat = () => {
     const { users } = useContext(userContext);
   const [open, setOpen] = useState(false);
   const handleOpenChats = () => {
-    open ? setOpen(false) : setOpen(true);
+    setOpen(!open)
   };
   return (
 <div className="flex justify-end pr-[2rem]">

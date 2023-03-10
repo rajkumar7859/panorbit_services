@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+### Deploy link
+##### https://panorbit-services.vercel.app/
+### Instructions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##### This is a web application built with React JS and Tailwind CSS, which implements the following features:
 
-## Available Scripts
+Landing Page: A scrollable list of user accounts, from which the user can select an account to go to the profile home page.
 
-In the project directory, you can run:
+Profile Home Page: The default page that shows the details of the logged-in user. It consists of the following elements:
 
-### `npm start`
+a. Profile Details Screen: Shows the details of the logged-in user, which are retrieved from the USERS API endpoint.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+b. Posts Details Screen: Displays a "Coming Soon" page.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+c. Gallery Screen: Displays a "Coming Soon" page.
 
-### `npm test`
+d. ToDo Screen: Displays a "Coming Soon" page.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Change/Add Profile: When the user clicks on their profile account in the top right corner, the following details will be displayed:
 
-### `npm run build`
+a. Profile Picture of logged in user
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+b. Logged-in member full name and username
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+c. List of other users' accounts (along with profile picture) and usernames
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+d. Clicking SignOut button will redirect the user to the Landing page.
 
-### `npm run eject`
+Chat: A chat box, as shown in the design, is included in the application.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To run the application:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository to your local machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Open a terminal window and navigate to the project directory.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Run npm install to install the required dependencies.
 
-## Learn More
+Run npm start to start the development server.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open a web browser and navigate to http://localhost:3000 to view the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note: This application requires a backend API to retrieve user data. The USERS API endpoint should be replaced with the appropriate endpoint for the backend API used.

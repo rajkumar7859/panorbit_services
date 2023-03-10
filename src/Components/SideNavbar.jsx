@@ -1,26 +1,11 @@
-import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { Link, useLocation, useParams } from "react-router-dom";
+import React from "react";
 import { RiArrowDropRightLine } from "react-icons/ri";
 
 const SideNavbar = () => {
   const { userId } = useParams();
-  const navigate = useNavigate();
-  const [user, setUser] = useState(null);
   const activeLink = useLocation();
-  // useEffect(() => {
-  //   const fetchUser = async () => {
-  //     const response = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users/${userId}`);
-  //     setUser(response.data);
-  //   };
-  //   fetchUser();
-  // }, [userId]);
-
-  // function handleUserClick(userId) {
-  //   // Redirect to profile home page for selected user
-  //   console.log("User selected:", userId);
-  // }
-
+ 
   return (
     <nav className="p-8">
       <div className=" bg-gradient-to-b from-indigo-500 to-purple-800 p-8 h-[45rem] rounded-3xl">
@@ -29,7 +14,6 @@ const SideNavbar = () => {
             <li>
               <Link
                 to={`/profile/${userId}`}
-                //  onClick={() => handleUserClick(user.id)}
                 className={`${
                   activeLink.pathname === `/profile/${userId}`
                     ? "text-white"
