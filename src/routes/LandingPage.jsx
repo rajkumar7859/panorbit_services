@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import homePageImg from "../assets/home.png";
+import LandingSkeleton from "../Components/LandingSkeleton";
 import { userContext } from "../Context/UserProvider";
 
 const LandingPage = () => {
-  const { users } = useContext(userContext);
+  const { users ,isloading } = useContext(userContext);
 
   return (
     // Landing Page Container
@@ -27,13 +28,16 @@ const LandingPage = () => {
       >
         {/* Account Selection Header */}
         <div className=" bg-gray-100 rounded-t-[2.8rem]">
-          <h1 className="text-xl text-zinc-600 font-semibold p-8">
+          <h1 className="text-xl text-zinc-600 font-semibold p-8 text-center">
             Select User Account
           </h1>
         </div>
 
         {/* Account Selection List */}
-        <div className="bg-white rounded-b-[2.8rem]">
+        {
+          isloading?(<LandingSkeleton />):
+        
+         (<div className="bg-white rounded-b-[2.8rem]">
           <div className="p-8 overflow-y-auto h-[28rem] scrollbar-thin">
             {users?.length > 0 && // Use optional chaining to prevent errors if users is null or undefined
               users.map((user) => (
@@ -55,7 +59,8 @@ const LandingPage = () => {
                 </li>
               ))}
           </div>
-        </div>
+        </div>)
+}
       </div>
     </div>
   );

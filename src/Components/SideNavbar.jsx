@@ -6,6 +6,7 @@ const SideNavbar = () => {
   const activeLink = useLocation();
   const dataArr = JSON.parse(localStorage.getItem("userData"));
 
+  // function to get the active indicator for the current page
   const getIndicator = (path, color, marginTop) => {
     return activeLink.pathname === path && (
       <div style={{ marginTop }} className="indicator">
@@ -26,9 +27,10 @@ const SideNavbar = () => {
 
   return (
     <nav className="p-8">
-      <div className=" bg-gradient-to-b from-indigo-500 to-purple-800 p-8 h-[45rem] rounded-3xl">
-        <div className=" text-left py-44 leading-[4rem] font-semibold">
+      <div className="bg-gradient-to-b from-indigo-500 to-purple-800 p-8 h-[45rem] rounded-3xl">
+        <div className="text-left py-44 leading-[4rem] font-semibold">
           <ul>
+            {/* Link to user profile page */}
             <li>
               <Link
                 to={`/profile/${dataArr.id}`}
@@ -42,6 +44,7 @@ const SideNavbar = () => {
               </Link>
             </li>
             <hr />
+            {/* Link to user posts page */}
             <li>
               <Link
                 to="/profile/posts"
@@ -55,6 +58,7 @@ const SideNavbar = () => {
               </Link>
             </li>
             <hr />
+            {/* Link to user gallery page */}
             <li>
               <Link
                 to="/profile/gallery"
@@ -68,6 +72,7 @@ const SideNavbar = () => {
               </Link>
             </li>
             <hr />
+            {/* Link to user to-do page */}
             <li>
               <Link
                 to="/profile/todo"
@@ -81,6 +86,7 @@ const SideNavbar = () => {
               </Link>
               <hr />
             </li>
+            {/* Active indicators for each page */}
             {getIndicator("/profile/posts", "#664bd5", "-11rem")}
             {getIndicator("/profile/todo", "#6740c9", "-3rem")}
             {getIndicator(`/profile/${dataArr.id}`, "#6652db", "-15rem")}

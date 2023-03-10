@@ -22,7 +22,8 @@ const ProfileHomePage = () => {
       const dataArr=JSON.parse(localStorage.getItem("userData"))
 
   if (!dataArr) {
-    return <div><img className='w-[30rem]' style={{margin:"auto"}} src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/media/221d6bfc1960ab98a7585fcc2a4d0181.gif" alt="loading"/></div>;
+    return <div>
+      <img className='w-[30rem]' style={{margin:"auto"}} src="https://cdn.dribbble.com/users/2973561/screenshots/5757826/media/221d6bfc1960ab98a7585fcc2a4d0181.gif" alt="loading"/></div>;
   }
 
   return (
@@ -49,16 +50,16 @@ const ProfileHomePage = () => {
           </div>
         <hr/>
         <div className='leading-10 '>
-          <heading className="text-gray-500 font-medium">Company</heading>
-          <p className='text-gray-500 font-medium'>Name : <b className='text-gray-700' >{dataArr?.company.name}</b></p>
-          <p className='text-gray-500 font-medium flex justify-between'>catchphrase : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.catchPhrase}</b></div></p>
-          <p className='text-gray-500 font-medium flex justify-between'>bs : <div className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.bs}</b></div></p>
+          <p className="text-gray-500 font-medium text-center">Company</p>
+          <p className='text-gray-500 font-medium flex justify-between w-[89%]'>Name : <b className='text-gray-700' >{dataArr?.company.name}</b></p>
+          <p className='text-gray-500 font-medium flex justify-between'>catchphrase : <p className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.catchPhrase}</b></p></p>
+          <p className='text-gray-500 font-medium flex justify-between'>bs : <p className='w-[60%]'><b className='text-gray-700 ' >{dataArr?.company.bs}</b></p></p>
         </div>
         </div>
         <hr className='border border-gray-300 h-auto'/>
         <div className=' w-[50%] p-4 '>
          <div className='leading-8 w-[65%] '>
-          <heading className="text-gray-500 font-medium text-left">Address :</heading>
+          <p className="text-gray-500 font-medium text-left">Address :</p>
           <p className='text-gray-500 font-medium flex justify-between'>Street : <b className='text-gray-700' >{dataArr?.address.street}</b></p>
           <p className='text-gray-500 font-medium flex justify-between'>Suite : <b className='text-gray-700' >{dataArr?.address.suite}</b></p>
           <p className='text-gray-500 font-medium flex justify-between'>City : <b className='text-gray-700' >{dataArr?.address.city}</b></p>
