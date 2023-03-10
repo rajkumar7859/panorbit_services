@@ -77,8 +77,8 @@ const SideNavbar = () => {
               >
                 ToDo
               </Link>
-            </li>
             <hr />
+            </li>
             {activeLink.pathname === "/profile/posts" && (
               <div style={{ marginTop: "-11rem " }} className="indicator">
                 <style>

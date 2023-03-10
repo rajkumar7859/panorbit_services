@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import Navbar from "../Components/Navbar"
 import SideNavbar from '../Components/SideNavbar';
+import Chat from '../Components/Chat';
 
 const ProfileHomePage = () => {
   const { userId } = useParams();
@@ -72,6 +73,7 @@ const ProfileHomePage = () => {
       </div>)
       }
     </div>
+    <Chat />
       </div>
   </>
   );

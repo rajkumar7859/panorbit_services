@@ -1,4 +1,5 @@
 import React from "react";
+import Chat from "../Components/Chat";
 import Navbar from "../Components/Navbar";
 import SideNavbar from "../Components/SideNavbar";
 
@@ -19,6 +20,7 @@ const ToDo = () => {
           </div>
         </div>
       </div>
+      <Chat />
     </div>
   );
 };
