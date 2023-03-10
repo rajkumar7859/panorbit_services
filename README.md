@@ -1,8 +1,7 @@
 ## Important! 
 ### Run it on local I have use localStorage in it on deploy it's run some issue
-### Instructions
-
-##### This is a web application built with React JS and Tailwind CSS, which implements the following features:
+## Instructions
+### This is a web application built with React JS and Tailwind CSS, which implements the following features:
 
 Landing Page: A scrollable list of user accounts, from which the user can select an account to go to the profile home page.
 
