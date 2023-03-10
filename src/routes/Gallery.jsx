@@ -4,7 +4,6 @@ import Navbar from "../Components/Navbar";
 import SideNavbar from "../Components/SideNavbar";
 
 const Gallery = () => {
-  const {dataArr} =useContext(userContext)
   return (
     <div className="">
       <div className=" flex ">
