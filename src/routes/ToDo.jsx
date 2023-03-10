@@ -6,7 +6,6 @@ import { userContext } from "../Context/UserProvider";
 
 const ToDo = () => {
 const {dataArr} =useContext(userContext)
-  console.log("Todo", dataArr);
   return (
     <div className="">
       <div className=" flex ">

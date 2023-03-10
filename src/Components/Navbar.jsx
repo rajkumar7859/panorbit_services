@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { userContext } from "../Context/UserProvider";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const { users } = useContext(userContext);
+  const location =useLocation()
   const [open, setOpen] = useState(false);
 
   // This function is called when the user clicks on their name in the navbar
@@ -27,7 +28,10 @@ const Navbar = () => {
     <nav className="bg-white text-gray-600 py-4 flex justify-between items-center">
       {/* Link to home page */}
       <Link to="/" className="text-xl font-semibold">
-        Profile
+        {location.pathname===`/profile/${dataArr.id}`?"Profile" :""}
+        {location.pathname===`/profile/posts`?"Posts" :""}
+        {location.pathname===`/profile/gallery`?"Gallery" :""}
+        {location.pathname===`/profile/todo`?"ToDo" :""}
       </Link>
 
       <div className="flex items-center">
