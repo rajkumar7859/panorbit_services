@@ -18,7 +18,7 @@ const Allroutes = () => {
         <Route path='/profile/:userId' element={<ProfileHomePage />} />
 
         {/* Route for the user's profile */}
-        <Route path='/profile/:userId/profile' element={<Profile />} />
+        <Route path='/profile/:userId' element={<Profile />} />
 
         {/* Route for the user's posts */}
         <Route path='/profile/posts' element={<Posts />} />
