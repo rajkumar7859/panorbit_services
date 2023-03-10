@@ -13,7 +13,7 @@ const Posts = () => {
           <Navbar />
           <hr />
           <div className="mt-4 p-8">
-            <div className="text-center font-bold text-gray-400 text-[3rem] p-40">
+            <div className="text-center font-bold text-gray-400 text-[5rem] opacity-25 p-40">
               Coming Soon
             </div>
           </div>
