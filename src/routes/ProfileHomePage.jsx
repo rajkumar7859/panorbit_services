@@ -11,7 +11,8 @@ const ProfileHomePage = () => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users/${userId}`);
+      // const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users/${userId}`);
+      const res = await axios.get(`https://assign-json.onrender.com/users/${userId}`);
       setUser(res.data);
     };
     fetchUser();

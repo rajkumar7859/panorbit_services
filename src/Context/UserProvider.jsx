@@ -13,7 +13,8 @@ const [isloading , setIsLoading] =useState(false)
   const getData = async () => {
     try {
    setIsLoading(true)
-      const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users`);
+      const res = await axios.get(`https://assign-json.onrender.com/users`);
+      // const res = await axios.get(`https://drab-blue-shark-robe.cyclic.app/users`);
       const userData = res.data;
       setIsLoading(false)
       setUsers(userData);
